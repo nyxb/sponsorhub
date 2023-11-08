@@ -19,7 +19,7 @@
     "sponsors",
     "github-sponsors"
   ],
-  "workspaces": ["example"],
+  "workspaces": ["example/*"],
   "sideEffects": false,
   "exports": {
     ".": {
