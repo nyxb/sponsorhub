@@ -1,7 +1,7 @@
 import { scriptName } from 'yargs'
 import { version } from '../package.json'
 import { run } from './run'
-import type { SponsorkitConfig } from './types'
+import type { SponsorhubConfig } from './types'
 
 const cli = scriptName('sponsors-svg')
    .usage('$0 [args]')
@@ -42,7 +42,7 @@ cli.command(
       .strict()
       .help(),
    async (options) => {
-      const config = options as SponsorkitConfig
+      const config = options as SponsorhubConfig
 
       if (options._[0])
          config.outputDir = options._[0] as string
@@ -64,7 +64,7 @@ cli
  * - `>=10`
  * @param template
  */
-function createFilterFromString(template: string): SponsorkitConfig['filter'] {
+function createFilterFromString(template: string): SponsorhubConfig['filter'] {
    const [_, op, value] = template.split(/([<>=]+)/)
    const num = Number.parseInt(value)
    if (op === '<')
