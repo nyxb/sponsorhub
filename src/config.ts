@@ -2,7 +2,7 @@ import { loadConfig as _loadConfig } from 'unconfig'
 import { loadEnv } from './env'
 import { FALLBACK_AVATAR } from './fallback'
 import { presets } from './presets'
-import type { SponsorkitConfig, Sponsorship, Tier } from './types'
+import type { SponsorhubConfig, Sponsorship, Tier } from './types'
 
 export const defaultTiers: Tier[] = [
    {
@@ -47,7 +47,7 @@ text {
 }
 `
 
-export const defaultConfig: SponsorkitConfig = {
+export const defaultConfig: SponsorhubConfig = {
    width: 800,
    outputDir: './sponsorkit',
    cacheFile: '.cache.json',
@@ -58,14 +58,14 @@ export const defaultConfig: SponsorkitConfig = {
    svgInlineCSS: defaultInlineCSS,
 }
 
-export function defineConfig(config: SponsorkitConfig) {
+export function defineConfig(config: SponsorhubConfig) {
    return config
 }
 
-export async function loadConfig(inlineConfig: SponsorkitConfig = {}) {
+export async function loadConfig(inlineConfig: SponsorhubConfig = {}) {
    const env = loadEnv()
 
-   const { config = {} } = await _loadConfig<SponsorkitConfig>({
+   const { config = {} } = await _loadConfig<SponsorhubConfig>({
       sources: [
          {
             files: 'sponsor.config',
@@ -106,7 +106,7 @@ export async function loadConfig(inlineConfig: SponsorkitConfig = {}) {
          ...config.afdian,
          ...inlineConfig.afdian,
       },
-   } as Required<SponsorkitConfig>
+   } as Required<SponsorhubConfig>
 
    return resolved
 }
