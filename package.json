@@ -46,7 +46,7 @@
     "dev": "esno src/cli.ts",
     "lint": "eslint .",
     "prepublishOnly": "nyxr build",
-    "release": "bumping --commit --push --tag && pnpm publish"
+    "release": "bumping --commit --push --tag && npm publish"
   },
   "dependencies": {
     "consola": "^3.2.3",
