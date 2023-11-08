@@ -1,7 +1,7 @@
 {
   "name": "sponsorhub",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "bun@1.0.10",
   "description": "Toolkit for generating sponsors images",
   "author": "Dennis Ollhoff <contact@nyxb.email>",
@@ -19,7 +19,9 @@
     "sponsors",
     "github-sponsors"
   ],
-  "workspaces": ["example/*"],
+  "workspaces": [
+    "example/*"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
