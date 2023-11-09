@@ -101,11 +101,6 @@ export async function loadConfig(inlineConfig: SponsorhubConfig = {}) {
          ...config.opencollective,
          ...inlineConfig.opencollective,
       },
-      afdian: {
-         ...env.afdian,
-         ...config.afdian,
-         ...inlineConfig.afdian,
-      },
    } as Required<SponsorhubConfig>
 
    return resolved
