@@ -53,20 +53,20 @@ export interface Sponsorship {
 
 export type OutputFormat = 'svg' | 'png' | 'json'
 
-export type ProviderName = 'github' | 'patreon' | 'opencollective' | 'afdian'
+export type ProviderName = 'github' | 'patreon' | 'opencollective'
 
 export interface ProvidersConfig {
    github?: {
       /**
        * User id of your GitHub account.
        *
-       * Will read from `SPONSORKIT_GITHUB_LOGIN` environment variable if not set.
+       * Will read from `SPONSORHUB_GITHUB_LOGIN` environment variable if not set.
        */
       login?: string
       /**
        * GitHub Token that have access to your sponsorships.
        *
-       * Will read from `SPONSORKIT_GITHUB_TOKEN` environment variable if not set.
+       * Will read from `SPONSORHUB_GITHUB_TOKEN` environment variable if not set.
        *
        * @deprecated It's not recommended set this value directly, pass from env or use `.env` file.
        */
@@ -75,7 +75,7 @@ export interface ProvidersConfig {
        * The account type for sponsorships.
        *
        * Possible values are `user`(default) and `organization`.
-       * Will read from `SPONSORKIT_GITHUB_TYPE` environment variable if not set.
+       * Will read from `SPONSORHUB_GITHUB_TYPE` environment variable if not set.
        */
       type?: string
    }
@@ -83,7 +83,7 @@ export interface ProvidersConfig {
       /**
        * Patreon Token that have access to your sponsorships.
        *
-       * Will read from `SPONSORKIT_PATREON_TOKEN` environment variable if not set.
+       * Will read from `SPONSORHUB_PATREON_TOKEN` environment variable if not set.
        *
        * @deprecated It's not recommended set this value directly, pass from env or use `.env` file.
        */
@@ -93,7 +93,7 @@ export interface ProvidersConfig {
       /**
        * Api key of your OpenCollective account.
        *
-       * Will read from `SPONSORKIT_OPENCOLLECTIVE_KEY` environment variable if not set.
+       * Will read from `SPONSORHUB_OPENCOLLECTIVE_KEY` environment variable if not set.
        *
        * @deprecated It's not recommended set this value directly, pass from env or use `.env` file.
        */
@@ -101,52 +101,27 @@ export interface ProvidersConfig {
       /**
        * The id of your account.
        *
-       * Will read from `SPONSORKIT_OPENCOLLECTIVE_ID` environment variable if not set.
+       * Will read from `SPONSORHUB_OPENCOLLECTIVE_ID` environment variable if not set.
        */
       id?: string
       /**
        * The slug of your account.
        *
-       * Will read from `SPONSORKIT_OPENCOLLECTIVE_SLUG` environment variable if not set.
+       * Will read from `SPONSORHUB_OPENCOLLECTIVE_SLUG` environment variable if not set.
        */
       slug?: string
       /**
        * The GitHub handle of your account.
        *
-       * Will read from `SPONSORKIT_OPENCOLLECTIVE_GH_HANDLE` environment variable if not set.
+       * Will read from `SPONSORHUB_OPENCOLLECTIVE_GH_HANDLE` environment variable if not set.
        */
       githubHandle?: string
       /*
     * The type of your account. (`collective` or `individual`)
     *
-    * Will read from `SPONSORKIT_OPENCOLLECTIVE_TYPE` environment variable if not set.
+    * Will read from `SPONSORHUB_OPENCOLLECTIVE_TYPE` environment variable if not set.
     */
       type?: string
-   }
-   afdian?: {
-      /**
-       * The userId of your Afdian.
-       *
-       * Will read from `SPONSORKIT_AFDIAN_USER_ID` environment variable if not set.
-       *
-       * @see https://afdian.net/dashboard/dev
-       */
-      userId?: string
-      /**
-       * Afdian Token that have access to your sponsorships.
-       *
-       * Will read from `SPONSORKIT_AFDIAN_TOKEN` environment variable if not set.
-       *
-       * @see https://afdian.net/dashboard/dev
-       * @deprecated It's not recommended set this value directly, pass from env or use `.env` file.
-       */
-      token?: string
-      /**
-       * Exchange rate of USD to CNY
-       *
-       * @default 6.5
-       */
-      exechangeRate?: number
    }
 }
 
