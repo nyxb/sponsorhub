@@ -2,7 +2,6 @@ import type { Provider, ProviderName, SponsorhubConfig } from '../types'
 import { GitHubProvider } from './github'
 import { PatreonProvider } from './patreon'
 import { OpenCollectiveProvider } from './opencollective'
-import { AfdianProvider } from './afdian'
 
 export * from './github'
 
@@ -10,7 +9,6 @@ export const ProvidersMap = {
    github: GitHubProvider,
    patreon: PatreonProvider,
    opencollective: OpenCollectiveProvider,
-   afdian: AfdianProvider,
 }
 
 export function guessProviders(config: SponsorhubConfig) {
@@ -23,9 +21,6 @@ export function guessProviders(config: SponsorhubConfig) {
 
    if (config.opencollective && (config.opencollective.id || config.opencollective.slug || config.opencollective.githubHandle))
       items.push('opencollective')
-
-   if (config.afdian && config.afdian.userId && config.afdian.token)
-      items.push('afdian')
 
    // fallback
    if (!items.length)
